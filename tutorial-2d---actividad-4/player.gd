@@ -3,7 +3,6 @@ signal hit
 @export var speed = 400
 var screen_size
 
-
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	hide() 
@@ -42,10 +41,7 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "arriba"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
 
-
 func _on_body_entered(body: Node2D) -> void:
 	hide()
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
-	
-	
